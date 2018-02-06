@@ -5,8 +5,9 @@ public class MergePartition {
 	public static void main(String[] args) {
 		
 		//Testing arrays
-		int [] test1 = {1,4,4,6,2,4,3,17,0}; String [] test2 = {"Hello", "I", "Want" , "food"};
-		String [] test3 = {"zebra" , "tortilla" , "abba" , "foo", "bar", "aba"};
+		int [] test1 = {1,4,4,6,2,4,3,17,0};
+		String [] test2 = {"A", "C", "E" , "F" , "H"};
+		String [] test3 = {"B" , "D" , "G" , "I", "J", "K"};
 		
 		//MergeTest
 		long start = System.nanoTime();
@@ -14,8 +15,7 @@ public class MergePartition {
 		long end = System.nanoTime();
 		long time = end -start; 
 		System.out.println("Merge: " + time + "nanoseconds");
-		System.out.println(Arrays.toString(test1));
-		
+				
 		
 	
 		
@@ -32,9 +32,34 @@ public class MergePartition {
 	}
 	/*Pre-Condition: Both list1 and list2 contain Strings in alphabetical order from a to z.
 	Returns: An array of the two lists merged together. The result must be in alphabetical order. */
-	public static int[] merge(int[] list1 , int[] list2) {
-		System.out.println("c".compareTo("b"));
-		return list1 ;  
+	public static String[] merge(String[] list1 , String[] list2) {
+		String[] list3 = new String[list1.length+list2.length];
+		int index1 = 0 ; int index2 = 0 ;
+		if (list1.length >= list2.length)
+		{
+			System.out.println("This works");
+			for (int i= 0 ; i < list2.length ; i++)
+			{
+				if (list1[index1].compareTo(list2[index2]) == 1  )
+					{
+					list3[i] = list2[index2] ; 
+					index2++ ;
+					}
+				else if (list1[index1].compareTo(list2[index2]) == -1  )
+					{
+					list3[i] = list1[index1] ; 
+					index1++ ;  
+					}
+				
+			}
+			
+		}
+		if (list2.length > list1.length)
+		{
+			
+		}
+		System.out.println(Arrays.toString(list3));
+		return list3;  
 	}
 	
 	
