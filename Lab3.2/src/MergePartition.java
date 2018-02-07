@@ -34,8 +34,31 @@ public class MergePartition {
 	Returns: An array of the two lists merged together. The result must be in alphabetical order. */
 	public static String[] merge(String[] list1 , String[] list2) {
 		String[] list3 = new String[list1.length+list2.length];
-		int index1 = 0 ; int index2 = 0 ;
+		int index1 = 0 ; int index2 = 0 ; int i= 0 ;
 		if (list1.length >= list2.length)
+		{
+
+			System.out.println("This works");
+			while (index2 < list2.length)
+			{
+				if (list1[index1].compareTo(list2[index2]) > 0 ||  list1[index1].compareTo(list2[index2]) == 0 )
+					{
+					list3[i] = list2[index2] ; 
+					index2++ ; i++ ;
+					System.out.println(index2);
+					}
+				if (list1[index1].compareTo(list2[index2]) < 0  )
+					{
+					list3[i] = list1[index1] ; 
+					index1++ ;  i++ ; 
+					System.out.println(index1); 
+					}
+				
+			} 
+			
+		}
+		
+/*		else if (list2.length >= list1.length)
 		{
 			System.out.println("This works");
 			for (int i= 0 ; i < list2.length ; i++)
@@ -44,20 +67,16 @@ public class MergePartition {
 					{
 					list3[i] = list2[index2] ; 
 					index2++ ;
+					System.out.println(index2);
 					}
 				else if (list1[index1].compareTo(list2[index2]) == -1  )
 					{
 					list3[i] = list1[index1] ; 
 					index1++ ;  
+					System.out.println(index1);
 					}
-				
 			}
-			
-		}
-		if (list2.length > list1.length)
-		{
-			
-		}
+		} */
 		System.out.println(Arrays.toString(list3));
 		return list3;  
 	}
