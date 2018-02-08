@@ -6,8 +6,8 @@ public class MergePartition {
 		
 		//Testing arrays
 		int [] test1 = {1,4,4,6,2,4,3,17,0};
-		String [] test2 = {"A", "C", "E" , "F" , "H"};
-		String [] test3 = {"B" , "D" , "G" , "I", "J", "K"};
+		String [] test2 = {"A", "C", "E" , "F" , "H" , "Z"};
+		String [] test3 = {"B" , "D" , "G" , "I", "J", "K" , "Y", "X" ,"Z"};
 		
 		//MergeTest
 		long start = System.nanoTime();
@@ -39,19 +39,23 @@ public class MergePartition {
 		{
 
 			System.out.println("This works");
-			while (index2 < list2.length)
+			while (index1 != list1.length-1)
 			{
-				if (list1[index1].compareTo(list2[index2]) > 0 ||  list1[index1].compareTo(list2[index2]) == 0 )
-					{
-					list3[i] = list2[index2] ; 
-					index2++ ; i++ ;
-					System.out.println(index2);
-					}
-				if (list1[index1].compareTo(list2[index2]) < 0  )
+				
+				 if (list1[index1].compareTo(list2[index2]) < 0 || list1[index1].compareTo(list2[index2])==0  )
 					{
 					list3[i] = list1[index1] ; 
 					index1++ ;  i++ ; 
-					System.out.println(index1); 
+					System.out.println(index1 + " index1"); 
+					}
+				 if ( index2 == list2.length+1) {
+					 continue ; 
+				 }
+				 if (list1[index1].compareTo(list2[index2]) > 0  )
+					{
+					list3[i] = list2[index2] ; 
+					index2++ ; i++ ;
+					System.out.println(index2 + " index2");
 					}
 				
 			} 
