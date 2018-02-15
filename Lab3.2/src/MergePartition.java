@@ -97,7 +97,11 @@ greater than the pivot.*/
 	public static int partition(int[] list) {
 		int pivot = list[0] ; 
 		System.out.println(Arrays.toString(list));
-		swap (list , list[0], list[4]) ;
+		
+		
+		
+		swap (list , 0, 4) ;
+		
 		
 		
 		
