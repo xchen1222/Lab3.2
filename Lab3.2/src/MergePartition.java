@@ -26,8 +26,12 @@ public class MergePartition {
 	
 		
 		//mergeSort
-	//	ArrayMethod.mergeSort(test4) ; 
-	
+		start = System.nanoTime();
+		ArrayMethod.mergeSort(test4) ; 
+		end = System.nanoTime();
+		time = end -start ; 
+		System.out.println("mergeSort: " + time + "nanoseconds");
+		
 		
 		
 		
@@ -94,42 +98,32 @@ public class MergePartition {
 integer position of the pivot in the newly partitioned array. The original array should be rearranged so that
 all the elements before the pivot are less than or equal to the pivot and all the elements after the pivot are
 greater than the pivot.*/
-	public static int partition(int[] list) {
-		int pivot = list[0] ; 
+	
+		public static int partition(int[] list) {
+			int pivot = 0;
+			for (int i = list.length-1; i > pivot; i--) {
+				if (list[i] < list[pivot]) {
+					swap(list,pivot,pivot+1);
+					swap(list,pivot,i);
+					pivot++;
+				}
+			}
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 		System.out.println(Arrays.toString(list));
-		
-		
-		
-		swap (list , 0, 4) ;
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		System.out.println(pivot + " pivot") ; 
-		System.out.println(Arrays.toString(list)) ; 
-		return 1 ; 
+		return pivot;
 	}
+	
 	
 	public static void swap(int[] arr , int index1 , int index2)
 	{
