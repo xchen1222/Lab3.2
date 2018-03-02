@@ -32,7 +32,7 @@ public class MergePartition {
 		time = end -start ; 
 		System.out.println("mergeSort: " + time + "nanoseconds");
 		
-		
+		//Quick
 		
 		
 		
